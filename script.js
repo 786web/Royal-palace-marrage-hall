@@ -13,3 +13,19 @@ const langToggle=document.querySelector('.language-toggle');
 const translations=[['Home','ہوم'],['Gallery','گیلری'],['Packages','پیکجز'],['Services','سہولیات'],['Contact','رابطہ'],['Book Now','ابھی بک کریں'],['Book Your Event Now','اپنی تقریب بک کریں'],['View Gallery','گیلری دیکھیں'],['Where Dreams Become Royal','جہاں خواب شاہانہ بنتے ہیں'],['Send Booking Enquiry on WhatsApp','واٹس ایپ پر بکنگ کی درخواست بھیجیں']];
 let urdu=false;
 langToggle?.addEventListener('click',()=>{urdu=!urdu;langToggle.textContent=urdu?'English':'اردو';document.querySelectorAll('.nav a,.hero-actions a,.submit-btn,.hero-subtitle').forEach(el=>{if(!el.dataset.en)el.dataset.en=el.textContent.trim();const pair=translations.find(x=>el.dataset.en.startsWith(x[0]));if(pair)el.textContent=urdu?pair[1]:el.dataset.en})});
+
+
+/* Scroll-in animation: lightweight, mobile-friendly, and accessible */
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const revealTargets=document.querySelectorAll('main > section:not(.hero)');
+  revealTargets.forEach(section=>section.classList.add('reveal-section'));
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -35px 0px'});
+  revealTargets.forEach(section=>revealObserver.observe(section));
+}
