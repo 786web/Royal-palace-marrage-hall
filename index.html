@@ -17,7 +17,7 @@
   <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
   <nav class="nav" aria-label="Main navigation">
     <a href="#home">Home</a><a href="#gallery">Gallery</a><a href="#packages">Packages</a><a href="#services">Services</a><a href="#contact">Contact</a>
-    <a class="nav-book" href="#booking">Book Now <span>↗</span></a>
+    <button class="language-toggle" type="button" aria-label="Switch language">اردو</button><a class="nav-book" href="#booking">Book Now <span>↗</span></a>
   </nav>
 </header>
 <main>
@@ -34,7 +34,7 @@
     <h1>ROYAL <em>PALACE</em></h1>
     <p class="hero-subtitle">Where Dreams Become Royal</p>
     <p class="hero-description">Celebrate life's most beautiful moments in an atmosphere of timeless elegance.</p>
-    <div class="hero-actions"><a class="btn btn-gold" href="#booking">Book Your Event Now <span>↗</span></a><a class="btn btn-outline" href="#gallery">View Gallery</a></div>
+    <button class="night-toggle" type="button" aria-pressed="false">Night View ✦</button><div class="hero-actions"><a class="btn btn-gold" href="#booking">Book Your Event Now <span>↗</span></a><a class="btn btn-outline" href="#gallery">View Gallery</a></div>
   </div>
   <div class="hero-bottom"><span>GRAND CELEBRATIONS · UNFORGETTABLE MEMORIES</span><a href="#intro">SCROLL TO DISCOVER ↓</a></div>
   <div class="hero-side">EST. FOR YOUR SPECIAL MOMENTS</div>
@@ -70,11 +70,32 @@
     <article class="package-card"><p class="package-tier">THE GRAND</p><h3>Platinum</h3><p class="package-price">Rs. 400,000 <small>sample rate</small></p><ul><li>Premium event planning</li><li>Luxury decor consultation</li><li>Custom guest arrangements</li><li>Dedicated event discussion</li></ul><a class="package-link" href="#booking">Enquire Now ↗</a></article>
   </div>
 </section>
-<section class="services-section section" id="services">
+<section class="services-section
+<section class="calculator-section section" id="calculator">
+  <p class="section-kicker">PLAN YOUR BUDGET</p><h2>Event Price <em>Calculator</em></h2>
+  <p class="section-lead">Illustrative demo estimate only. Final rates must be confirmed with the venue team.</p>
+  <div class="calculator-panel">
+    <label>Number of guests<input id="calcGuests" type="number" min="1" max="5000" value="500"></label>
+    <label>Food menu<select id="calcMenu"><option value="1200">Standard menu · Rs. 1,200 / guest (demo)</option><option value="1500">Premium menu · Rs. 1,500 / guest (demo)</option><option value="1800">Royal menu · Rs. 1,800 / guest (demo)</option></select></label>
+    <p class="estimate-label">Estimated food cost</p><output id="calcTotal">Rs. 600,000</output>
+    <p class="form-note">This is a sample food-only calculation, not a quotation or confirmed package price.</p>
+  </div>
+</section>
+<section class="reviews-section section" id="reviews">
+  <p class="section-kicker">GUEST EXPERIENCES</p><h2>Words from our <em>Guests</em></h2>
+  <div class="review-placeholder"><div class="review-stars" aria-label="Five star review placeholder">★★★★★</div><h3>Real customer reviews coming soon</h3><p>Verified guest feedback and genuine event photographs will be added here once supplied by ROYAL PALACE.</p></div>
+</section>
+<section class="location-section section" id="location">
+  <p class="section-kicker">FIND YOUR WAY</p><h2>Visit <em>Royal Palace</em></h2>
+  <p class="section-lead">Demo location only: Kharian, Punjab, Pakistan. This is not the confirmed hall address.</p>
+  <div class="map-frame"><iframe title="Demo map showing Kharian, Punjab" src="https://www.google.com/maps?q=Kharian%2C%20Punjab%2C%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  <div class="video-placeholder"><span>▶</span><h3>Venue video coming soon</h3><p>Share a real 30-second hall video to display it here.</p></div>
+</section>
+ section" id="services">
   <p class="section-kicker">MADE FOR EVERY OCCASION</p><h2>Celebrate every <em>milestone.</em></h2>
   <div class="event-list"><div><span>01</span><h3>Barat</h3><p>A grand welcome for a once-in-a-lifetime celebration.</p><b>↗</b></div><div><span>02</span><h3>Walima</h3><p>Bring family and friends together for a beautiful reception.</p><b>↗</b></div><div><span>03</span><h3>Mehndi</h3><p>Colour, joy and a festive atmosphere for your special night.</p><b>↗</b></div><div><span>04</span><h3>Birthday</h3><p>Make another year worth celebrating with loved ones.</p><b>↗</b></div><div><span>05</span><h3>Corporate Events</h3><p>A welcoming setting for gatherings and business occasions.</p><b>↗</b></div></div>
 </section>
-<section class="booking-section section" id="booking">
+<section class="date-check-section section" id="date-check"><p class="section-kicker">CHECK YOUR EVENT DATE</p><h2>Is your date <em>available?</em></h2><p class="section-lead">Choose your preferred date and ask our team to confirm availability on WhatsApp. Live booked/free status is not connected yet.</p><div class="date-check-panel"><label for="checkDate">Preferred event date</label><input id="checkDate" type="date"><button id="checkDateBtn" class="btn btn-gold" type="button">Check on WhatsApp ↗</button></div></section>\n<section class="booking-section section" id="booking">
   <div class="booking-intro"><p class="section-kicker">YOUR ROYAL MOMENT BEGINS HERE</p><h2>Let's plan your<br><em>perfect day.</em></h2><p>Share a few details about your event. Our team will be happy to discuss your requirements.</p><div class="booking-contact"><span>CALL OR WHATSAPP</span><a href="tel:+923421432978">+92 342 1432978</a><span>DEMO LOCATION</span><p>Kharian, Punjab, Pakistan</p><span>DEMO TIMINGS</span><p>10:00 AM – 11:00 PM</p><span>DEMO CAPACITY</span><p>300–1,000 Guests</p></div></div>
   <form id="bookingForm" class="booking-form">
     <div class="form-heading"><span>01 / EVENT ENQUIRY</span><h3>Tell us about your event</h3></div>
@@ -88,6 +109,6 @@
 </section>
 <section class="contact-strip" id="contact"><div><p class="section-kicker">WE'D LOVE TO HEAR FROM YOU</p><h2>Let's make it <em>memorable.</em></h2></div><div class="contact-details"><span>CALL / WHATSAPP</span><a href="tel:+923421432978">+92 342 1432978</a><span>LOCATION (DEMO)</span><p>Kharian, Punjab, Pakistan</p><span>OPENING HOURS (DEMO)</span><p>Daily · 10:00 AM – 11:00 PM</p></div></section>
 </main>
-<footer class="footer"><div class="footer-main"><a class="brand" href="#home"><span class="brand-mark">♛</span><span><b>ROYAL PALACE</b><small>MARRIAGE HALL</small></span></a><p>Where Dreams Become Royal</p><a class="footer-call" href="https://wa.me/923421432978" target="_blank" rel="noopener">WhatsApp Us ↗</a></div><div class="footer-bottom"><span>© <span id="year"></span> ROYAL PALACE Marriage Hall. All rights reserved.</span><span>Demo address: Kharian, Punjab, Pakistan</span><a href="#home">Back to top ↑</a></div><p class="photo-note">DEMO CONTENT: Package rates, location, timings and capacity are sample details only and must be confirmed before public use. Gallery photos are illustrative, not verified venue photographs.</p></footer>
+<a class="floating-whatsapp" href="https://wa.me/923421432978?text=Assalam-o-Alaikum%2C%20Royal%20Palace%20me%20booking%20chahiye" target="_blank" rel="noopener" aria-label="WhatsApp direct booking">WhatsApp</a>\n<footer class="footer"><div class="footer-main"><a class="brand" href="#home"><span class="brand-mark">♛</span><span><b>ROYAL PALACE</b><small>MARRIAGE HALL</small></span></a><p>Where Dreams Become Royal</p><a class="footer-call" href="https://wa.me/923421432978" target="_blank" rel="noopener">WhatsApp Us ↗</a></div><div class="footer-bottom"><span>© <span id="year"></span> ROYAL PALACE Marriage Hall. All rights reserved.</span><span>Demo address: Kharian, Punjab, Pakistan</span><a href="#home">Back to top ↑</a></div><p class="photo-note">DEMO CONTENT: Package rates, location, timings and capacity are sample details only and must be confirmed before public use. Gallery photos are illustrative, not verified venue photographs.</p></footer>
 <script src="script.js"></script>
 </body></html>
